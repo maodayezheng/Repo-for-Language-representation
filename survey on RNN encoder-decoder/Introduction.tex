@@ -1,0 +1,23 @@
+\chapter{Introduction}
+\label{Introduction}
+Building a human like agent that can process natural language information is a long term and illustrated goal in Natural Language Processing (NLP). 
+One fundamental problem for NLP researchers is to find certain machine interpretable representations, that can describe full information of language data. 
+In today's NLP research, there are many established methods can acquire representations for words from unlabelled text data \cite{mikolov2013distributed,mikolov2013efficient,pennington2014glove}.
+These methods have been well studied and analysed\cite{levy2014neural}, the high quality representations can be used as additional features to improve the performance of language processing system\cite{collobert2011natural}. 
+In contrast, much less efforts are made to develop methods that can learn the representations of phrases or sentences.
+This is because little consensus about which model architectures or training objectives can results in useful representations for input sentences\cite{hill2016learning}.\\\\
+Recurrent Neural Networks (RNNs)\cite{elman1991distributed} are neural networks which are well-suited for NLP tasks. An RNN encode a sequence into high dimensional vector (known as the hidden representation or hidden state) that incorporates new inputs using a nonlinear function\cite{sutskever2013training}. 
+However, it is very difficult for standard RNNs to store information in hidden state for long time\cite{bengio1994learning}. 
+ Gated RNNs\cite{hochreiter1997long,chung2014empirical} are extension of standard RNNs with ``memory units'' which has been shown capability to store and access information over very long time period. 
+ In various NLP tasks RNNs have outperformed traditional models\cite{mikolov2012statistical}.
+The recent proposed RNN based sequence to sequence (seq2seq) model\cite{cho2014learning,sutskever2014sequence} allows researchers to deal with variable length of inputs and outputs, the application of seq2seq model in machine translation has achieved remarkable results\cite{cho2014learning,sutskever2014sequence}.
+It is shown that seq2seq model can be trained to reconstruct input sentences as its outputs\cite{dai2015semi}. 
+This allows us to pretrain an RNN sentence encoder in an unsupervised way. \\\\
+We are typically interested in how different objectives can affect the pretrain sentence encoder and learnt representations. 
+Therefore we pretrain seq2seq model with different objectives to obtain several sentence encoders, and evaluate these encodes on a range of tasks. \\\\
+The structure of remaining contents are organised as follow:
+\textbf{Chapter 2} reviews standard n-gram language model and background knowledge about RNN. It also provides some brief introduction about neural language models. 
+\textbf{Chapter 3} describes the seq2seq model in detail and training objective functions, as well as evaluation metrics.
+\textbf{Chapter 4} discusses the datasets and training strategies that are used to train our models.
+\textbf{Chapter 5} shows the analysis on evaluation metrics and experiments.
+\textbf{Chapter 6} gives a final conclusion about this thesis.
